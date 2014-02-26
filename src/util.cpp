@@ -976,7 +976,7 @@ boost::filesystem::path GetDefaultDataDir()
     // Windows < Vista: C:\Documents and Settings\Username\Application Data\RevolutionCoin
     // Windows >= Vista: C:\Users\Username\AppData\Roaming\RevolutionCoin
     // Mac: ~/Library/Application Support/RevolutionCoin
-    // Unix: ~/.RevolutionCoin
+    // Unix: ~/.revolutioncoin
 #ifdef WIN32
     // Windows
     return GetSpecialFolderPath(CSIDL_APPDATA) / "RevolutionCoin";
@@ -1036,7 +1036,7 @@ const boost::filesystem::path &GetDataDir(bool fNetSpecific)
 
 boost::filesystem::path GetConfigFile()
 {
-    boost::filesystem::path pathConfigFile(GetArg("-conf", "RevolutionCoin.conf"));
+    boost::filesystem::path pathConfigFile(GetArg("-conf", "revolutioncoin.conf"));
     if (!pathConfigFile.is_complete()) pathConfigFile = GetDataDir(false) / pathConfigFile;
     return pathConfigFile;
 }
@@ -1067,7 +1067,7 @@ void ReadConfigFile(map<string, string>& mapSettingsRet,
 
 boost::filesystem::path GetPidFile()
 {
-    boost::filesystem::path pathPidFile(GetArg("-pid", "RevolutionCoind.pid"));
+    boost::filesystem::path pathPidFile(GetArg("-pid", "revolutioncoind.pid"));
     if (!pathPidFile.is_complete()) pathPidFile = GetDataDir() / pathPidFile;
     return pathPidFile;
 }
